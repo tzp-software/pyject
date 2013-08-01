@@ -49,15 +49,15 @@ def make_setup(name):
 		from distutils.core import setup
 
 	config = {
-		'name': {0},
+		'name': ,
 		'version': '0.0.1',
-		'author': {1},
-		'author_email': {2},
+		'author': ,
+		'author_email': ,
 		'description': '',
 		'long_description': open('README','r').read(),
-		'py_packages': {0}
+		'py_packages': 
 		}
 
 	setup(**config)
-	'''.format(name,USER,EMAIL)
+	'''
 	return txt

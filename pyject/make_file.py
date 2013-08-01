@@ -4,7 +4,6 @@
 import os
 import sys
 from make_text import make_main, make_test, make_setup
-from projects import create_project
 from root import go_to_root
 
 types = {
@@ -18,14 +17,11 @@ def add_module(projectName,moduleName):
 	oldDir = os.getcwd()
 	go_to_root()
 	if not os.path.exists(projectName):
-		print 'Error: {} project dir does not exist\nCreate? (y or n): '.format(projectName)
-		if raw_input().lower().startswith('y'):
-			create_project(projectName)
-		else:
-			sys.exit(1)
+		print 'Error: {} project dir does not exist'
+		sys.exit(1)
 	
 	os.chdir(projectName)
-	make_main(moduleName)
+	make_main_file(moduleName)
 
 	if os.path.exists(moduleName):
 		print 'made python module {}'.format(moduleName)
@@ -50,14 +46,14 @@ def make_file(fileName, txt=None):
 def get_text(name, fileType):
 	return types[fileType](name)
 
-def make_setup(projName):
-	make_file(projName,get_text(projName,'setup'))
+def make_setup_file(projName):
+	make_file('setup.py',get_text(projName,'setup'))
 
-def make_main(projName):
+def make_main_file(projName):
 	make_file(projName,get_text(projName,'main'))
 
-def make_test(projName):
-	make_file(projName,get_text(projName,'test'))
+def make_test_file(projName):
+	make_file('test.py',get_text(projName,'test'))
 
 def make_init():
 	make_file('__init__.py')
