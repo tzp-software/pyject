@@ -8,6 +8,9 @@ from make_dir import add_package
 from projects import create_project
 from make_file import add_module
 import sys
+import os
+
+
 
 def main():
 	if len(sys.argv) > 1:

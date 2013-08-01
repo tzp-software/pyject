@@ -3,6 +3,9 @@
 '''
 import sys
 
+USER = 'Kyle Roux'
+EMAIL = 'jstacoder@gmail.com'
+
 def list_all():
 	print 'listing all packages'
 
