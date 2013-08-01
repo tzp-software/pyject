@@ -1,0 +1,4 @@
+include README
+graft pyject
+prune tests
+prune .git

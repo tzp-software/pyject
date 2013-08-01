@@ -1,0 +1,16 @@
+MANIFEST.in
+README
+setup.py
+pyJect.egg-info/PKG-INFO
+pyJect.egg-info/SOURCES.txt
+pyJect.egg-info/dependency_links.txt
+pyJect.egg-info/entry_points.txt
+pyJect.egg-info/top_level.txt
+pyject/__init__.py
+pyject/_config.py
+pyject/_main.py
+pyject/_setup.py
+pyject/main.py
+pyject/makedirs.py
+pyject/makefiles.py
+pyject/options.py
