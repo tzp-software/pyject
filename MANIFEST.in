@@ -1,5 +1,5 @@
 include README
-global_exclude *.pyc
+exclude pyject/*.pyc
 graft pyject
 prune tests
 prune .git
