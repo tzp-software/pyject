@@ -7,15 +7,30 @@ USER = 'Kyle Roux'
 EMAIL = 'jstacoder@gmail.com'
 
 def list_all():
-	print 'listing all packages'
-	from root import ROOT_DIR
-	import os
-	print 'Projects in root dir:'
-	for itm in os.listdir(ROOT_DIR):
-		print itm
+    print 'listing all packages'
+    from root import ROOT_DIR
+    import os
+    if not os.path.exists(ROOT_DIR):
+        os.makedirs(ROOT_DIR)
+    print 'checking projects in root dir....'
+    itms = os.listdir(ROOT_DIR)
+    if itms:
+        print 'Projects:\n\n'
+        for itm in itms:
+            if os.path.isdir(itm):
+                print 'Dir '
+                print itm
+            elif os.path.isfile(itm):
+                print 'File'
+                print itm
+            else:
+                print 'Dunno'
+                print itm
+    else:
+        print 'No projects found'
 
 def print_usage():
-	usage = '''
+    usage = '''
 USAGE: pyject [-c PROJECT] [-m PROJECT [PACKAGE] MODULE] [-p PROJECT PACKAGE] 
 [-w PROJECT [PACKAGE]] [-l]
 	
@@ -28,7 +43,7 @@ Options:
 
 Tzp-Software		kyle roux
 
-	'''
-	print usage
-	sys.exit(1)
+    '''
+    print usage
+    sys.exit(1)
 
