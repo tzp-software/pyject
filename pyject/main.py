@@ -20,7 +20,12 @@ def main():
         if args[0] == '-c' or args[0] == '--create-project':
             create_project(args[1])
         elif args[0] == '-m' or args[0] == '--add-module':
-            add_module(args[1],args[2])
+            if len(args) == 3:
+                add_module(args[1],args[2])
+            else:
+                if len(args) == 4:
+                    add_module(args[1],args[2],args[3])
+
         elif args[0] == '-p' or args[0] == '--add-package':
             add_package(args[1],args[2])
         elif args[0] == '-l' or args[0] == '--list-all':
