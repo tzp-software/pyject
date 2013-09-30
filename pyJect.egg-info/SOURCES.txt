@@ -6,6 +6,7 @@ pyJect.egg-info/SOURCES.txt
 pyJect.egg-info/dependency_links.txt
 pyJect.egg-info/entry_points.txt
 pyJect.egg-info/top_level.txt
+pyject/.gitignore
 pyject/__init__.py
 pyject/data.py
 pyject/main.py
