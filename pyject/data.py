@@ -15,17 +15,8 @@ def list_all():
     print 'checking projects in root dir....'
     itms = os.listdir(ROOT_DIR)
     if itms:
-        print 'Projects:\n\n'
-        for itm in itms:
-            if os.path.isdir(itm):
-                print 'Dir '
-                print itm
-            elif os.path.isfile(itm):
-                print 'File'
-                print itm
-            else:
-                print 'Dunno'
-                print itm
+        print 'Projects:'
+        print '\n'.join(map(str,itms))
     else:
         print 'No projects found'
 

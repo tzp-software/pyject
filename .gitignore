@@ -1,2 +1,4 @@
 *.pyc 
 pyject/*.pyc
+dist/*
+build/*

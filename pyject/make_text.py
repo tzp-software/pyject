@@ -4,60 +4,59 @@
 from data import USER, EMAIL
 
 def make_main(fileName):
-	txt = '''
+    txt = '''
 
-	def {0}():
-	    pass
-	
-	def test():
-		pass
-	
-	def main():
-		{0}()
-	
-	if __name__ == "__main__":
-		main()
-	'''.format(fileName)
-	return txt
+def {0}():
+    pass
+
+def test():
+    pass
+
+def main():
+    {0}()
+
+if __name__ == "__main__":
+    main()
+    '''.format(fileName)
+    return txt
 
 def make_test(fileName):
-	txt = '''
+    txt = '''
 
-	import unittest
+import unittest
 
-	class Test{0}(unittest.TestCase):
-		def setUp(self):
-			pass
-		
-		def tearDown(self):
-			pass
+class Test{0}(unittest.TestCase):
+    def setUp(self):
+        pass
 
-		def test_{}(self):
-			assertTrue(True)
+    def tearDown(self):
+        pass
+
+    def test_{}(self):
+        assertTrue(True)
 	
-	if __name__ == "__main__":
-		unittest.main()
+if __name__ == "__main__":
+    unittest.main()
 
-	'''.format(fileName)
-	return txt
+    '''.format(fileName)
+    return txt
 
 def make_setup(name):
-	txt = '''
-	try:
-		from setuptools import setup
-	except ImportError:
-		from distutils.core import setup
+    txt = '''
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-	config = {
-		'name': ,
-		'version': '0.0.1',
-		'author': ,
-		'author_email': ,
-		'description': '',
-		'long_description': open('README','r').read(),
-		'py_packages': 
-		}
-
-	setup(**config)
-	'''
-	return txt
+config = {
+    'name': ,
+    'version': '0.0.1',
+    'author': 'Kyle Roux',
+    'author_email': 'jstacoder@gmail.com',
+    'description': '',
+    'long_description': open('README','r').read(),
+    'py_packages': 
+    }
+setup(**config)
+    '''
+    return txt
