@@ -39,6 +39,8 @@ def make_file(fileName, txt=None):
         sys.exit(1)
     else:
         try:
+            if not fileName.endswith('.py'):
+                    fileName += '.py'
             f = open(fileName,'w')
             if txt is not None:
                 f.write(txt)

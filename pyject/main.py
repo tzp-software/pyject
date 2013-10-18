@@ -27,7 +27,14 @@ def main():
                     add_module(args[1],args[2],args[3])
 
         elif args[0] == '-p' or args[0] == '--add-package':
-            add_package(args[1],args[2])
+            if len(args) == 3:
+                add_package(args[1],args[2])
+            else:
+                add_package(args[1],args[2],args[3])
+
+
+
+
         elif args[0] == '-l' or args[0] == '--list-all':
             list_all()
         elif args[0] == '-w' or args[0] == '--work-project' or args[0] == '--work':
