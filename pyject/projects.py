@@ -24,8 +24,8 @@ def create_project(projectName):
         os.chdir('tests')
         make_init()
         os.chdir(os.pardir)
-            if not os.path.exists(projectName):
-                os.mkdir(projectName)
+        if not os.path.exists(projectName):
+            os.mkdir(projectName)
         os.chdir(projectName)
         make_init()
         os.chdir(oldDir)
