@@ -20,6 +20,10 @@ def create_project(projectName):
 		make_setup_file(projectName)
 		make_manifest()
 		make_readme()
+        os.mkdir('tests')
+        os.chdir('tests')
+        make_init()
+        os.chdir(os.pardir)
 		if not os.path.exists(projectName):
 			os.mkdir(projectName)
 		os.chdir(projectName)
