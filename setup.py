@@ -5,7 +5,7 @@ except ImportError:
 
 config = {
 	'name': 'pyJect',
-	'version': '2.1.5',
+	'version': '2.1.6',
 	'author': 'Kyle Roux',
 	'author_email': 'jstacoder@gmail.com',
 	'description': 'a command line tool to make and orginize projects',
