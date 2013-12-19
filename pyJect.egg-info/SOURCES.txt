@@ -5,14 +5,17 @@ pyJect.egg-info/PKG-INFO
 pyJect.egg-info/SOURCES.txt
 pyJect.egg-info/dependency_links.txt
 pyJect.egg-info/entry_points.txt
+pyJect.egg-info/requires.txt
 pyJect.egg-info/top_level.txt
 pyject/.gitignore
 pyject/__init__.py
 pyject/__init__.pyc
 pyject/data.py
+pyject/data.pyc
 pyject/main.py
 pyject/make_dir.py
 pyject/make_file.py
 pyject/make_text.py
+pyject/make_text.pyc
 pyject/projects.py
 pyject/root.py

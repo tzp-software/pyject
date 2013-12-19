@@ -83,21 +83,25 @@ if __name__ == "__main__":
     return txt
 
 def make_setup(name):
+    userinfo = {'username':get_username_and_email()[0],
+			 	'email' : get_username_and_email()[1],
+	   			'name' : name}
     txt = '''
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-config = {
-    'name': ,
-    'version': '0.0.1',
-    'author': 'Kyle Roux',
-    'author_email': 'jstacoder@gmail.com',
-    'description': '',
-    'long_description': open('README','r').read(),
-    'py_packages':
-    }
-setup(**config)
+setup(
+    'name'= '%(name)s',
+    'version'= '0.0.1',
+    'author'= '%(username)s',
+    'author_email'= '%(email)s',
+    'description'= '',
+    'long_description'= open('README','r').read(),
+    #'py_packages':
+    )
+
     '''
+    txt = txt % userinfo
     return txt

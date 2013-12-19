@@ -12,6 +12,7 @@ config = {
 	'long_description': open('README','r').read(),
 	'packages': ['pyject'],
     'py_modules': ['pyject'],
+    'install_requires': ['iniparse'],
 	'entry_points': {
 		'console_scripts': [
 			'pyject = pyject.main:main'
