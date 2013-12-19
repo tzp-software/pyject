@@ -1,7 +1,10 @@
 '''
 	pyject.data.py
 '''
+import os
 import sys
+from iniparse import INIConfig
+
 
 USER = 'Kyle Roux'
 EMAIL = 'jstacoder@gmail.com'
@@ -22,9 +25,9 @@ def list_all():
 
 def print_usage():
     usage = '''
-USAGE: pyject [-c PROJECT] [-m PROJECT [PACKAGE] MODULE] [-p PROJECT PACKAGE] 
+USAGE: pyject [-c PROJECT] [-m PROJECT [PACKAGE] MODULE] [-p PROJECT PACKAGE]
 [-w PROJECT [PACKAGE]] [-l]
-	
+
 Options:
 -c, --create-project PROJECT                make a new project named PROJECT
 -m, --add-module PROJECT [PACKAGE] MODULE   make a new module MODULE in PROJECT/PACKAGE
@@ -37,4 +40,14 @@ Tzp-Software		kyle roux
     '''
     print usage
     sys.exit(1)
+
+def get_username_and_email(name=None,email=None):
+	cfg = '.pyject.cfg'
+	ini = INIConfig(file(os.path.join(os.path.expanduser('~'),cfg)))
+	if name is None:
+		name = ini.userinfo.username
+	if email is None:
+		email = ini.userinfo.email
+	return (name,email)
+
 

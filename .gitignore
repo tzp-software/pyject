@@ -3,3 +3,4 @@ tests/*.pyc
 pyject/*.pyc
 dist/*
 build/*
+.project
