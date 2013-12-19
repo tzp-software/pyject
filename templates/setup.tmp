@@ -1,0 +1,15 @@
+try:
+   from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+
+config = {
+    'name': {projectName},
+    'author':{userName},
+    'author_email':{userEmail},
+    #'include_project_data': True,
+    #'entry_points':{
+        }
+
+setup(**config)

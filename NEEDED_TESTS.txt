@@ -1,0 +1,21 @@
+fixtures
+    setup 
+        pyject -n testproj 
+        projDir = os.path.join(project_root,testproj)
+
+    teardown
+        remove recursive projDir
+
+tests
+    make_project
+        test 
+            os.path.isdir(projDir)
+            os.path.isfile(os.path.join(projDir,['setup.py','MANIFEST.in','proj/__init__.py']))
+    
+    add_module
+        test
+            sometest
+
+    add_package
+        test
+            sometest

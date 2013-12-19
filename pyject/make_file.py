@@ -14,6 +14,7 @@ types = {
 
 def add_module(projectName,moduleName,packageName=None):
     print 'adding module named {} to project {}'.format(moduleName,projectName)
+    moduleName = moduleName + '.py'
     oldDir = os.getcwd()
     go_to_root()
     if not os.path.exists(projectName):
