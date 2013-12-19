@@ -1,3 +1,4 @@
+tests/*.pyc
 *.pyc 
 pyject/*.pyc
 dist/*
