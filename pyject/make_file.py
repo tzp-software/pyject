@@ -3,7 +3,7 @@
 '''
 import os
 import sys
-from make_text import make_main, make_test, make_setup
+from make_text import make_main, make_test, make_setup, make_header
 from root import go_to_root
 
 types = {
@@ -55,10 +55,10 @@ def make_setup_file(projName):
     make_file('setup.py',get_text(projName,'setup'))
 
 def make_main_file(projName):
-    make_file(projName,get_text(projName,'main'))
+    make_file(projName,make_header()+get_text(projName,'main'))
 
 def make_test_file(projName):
-    make_file('test.py',get_text(projName,'test'))
+    make_file('test.py',make_header()+get_text(projName,'test'))
 
 def make_init():
     make_file('__init__.py')

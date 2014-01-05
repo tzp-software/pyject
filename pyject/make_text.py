@@ -83,9 +83,12 @@ if __name__ == "__main__":
     return txt
 
 def make_setup(name):
-    userinfo = {'username':get_username_and_email()[0],
+    try:
+        userinfo = {'username':get_username_and_email()[0],
 			 	'email' : get_username_and_email()[1],
 	   			'name' : name}
+    except TypeError:
+        print get_username_and_email()
     txt = '''
 try:
     from setuptools import setup

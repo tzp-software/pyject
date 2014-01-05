@@ -9,6 +9,18 @@ from iniparse import INIConfig
 USER = 'Kyle Roux'
 EMAIL = 'jstacoder@gmail.com'
 
+def make_cfg():
+    parser = INIConfig()
+    name = raw_input('Please enter your username: ')
+    parser.userinfo.username = name
+    email = raw_input('please enter your email: ')
+    parser.userinfo.email = email
+    cfg = '.pyject.cfg'
+    cfgpath = os.path.join(os.path.expanduser('~'),cfg)
+    f = open(cfgpath,'w')
+    f.write(str(parser)+'\n')
+    f.close()
+
 def list_all():
     print 'listing all packages'
     from root import ROOT_DIR
@@ -42,12 +54,13 @@ Tzp-Software		kyle roux
     sys.exit(1)
 
 def get_username_and_email(name=None,email=None):
-	cfg = '.pyject.cfg'
-	ini = INIConfig(file(os.path.join(os.path.expanduser('~'),cfg)))
+    cfg = '.pyject.cfg'
+    cfgpath = os.path.join(os.path.expanduser('~'),cfg)
+    if not os.path.exists(cfgpath):
+        make_cfg()
+	ini = INIConfig(file(cfgpath))
 	if name is None:
 		name = ini.userinfo.username
 	if email is None:
 		email = ini.userinfo.email
 	return (name,email)
-
-
